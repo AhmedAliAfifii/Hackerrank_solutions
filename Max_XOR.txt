@@ -1,0 +1,14 @@
+int maximizingXor(int l, int r) {
+    for(char shift=(sizeof(int)*8)-1;shift>0;shift--)
+    {
+        if((l>>shift) ^ (r>>shift))
+        {
+            int result=1<<shift;
+            result=(result-1)|result;
+            return result;
+        }
+    }
+    return 0;
+    
+
+}
